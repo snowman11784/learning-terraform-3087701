@@ -1,4 +1,4 @@
- m n output "instance_ami" {
+output "instance_ami" {
   value = aws_instance.blog.ami
 }
 
