@@ -34,7 +34,8 @@ module "blog_vpc" {
   }
 }
 
-module "autoscaling" {
+
+module "blog_autoscaling" {
   source  = "terraform-aws-modules/autoscaling/aws"
   version = "8.2.0"
 
@@ -100,6 +101,7 @@ module "blog_alb" {
       protocol         = "HTTP"
       port             = 80
       target_type      = "instance"
+      target_id        = module.blog_autoscaling.blog.id
     }
   }
 
