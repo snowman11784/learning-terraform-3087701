@@ -22,8 +22,13 @@ variable "environment" {
 
   type = object({
     name           = string
-    network_prefix = "10.0"
+    network_prefix = string
   })
+
+  default = {
+    name           = "dev"
+    network_prefix = "10.0"
+  }
 }
 
 variable "asg_min_size" {
