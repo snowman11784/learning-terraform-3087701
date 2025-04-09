@@ -66,7 +66,7 @@ module "blog_alb" {
   subnets         = module.blog_vpc.public_subnets
   security_groups = [module.blog_sg.security_group_id]
 
-  enable_delete_protection = false 
+  enable_deletion_protection = false
 
   # Security Group
   security_group_ingress_rules = {
